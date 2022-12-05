@@ -1,0 +1,96 @@
+<%= form_with(model: municipe, local: true) do |form| %>
+  <% if municipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(municipe.errors.count, "error") %> prohibited this municipe from being saved:</h2>
+
+      <ul>
+        <% municipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.number_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cns %>
+    <%= form.number_field :cns %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.check_box :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :small_avatar %>
+    <%= form.file_field :small_avatar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :large_avatar %>
+    <%= form.file_field :large_avatar %>
+  </div>
+
+  <!-- Address -->
+  <h1>Endereço!</h1>
+
+  <div class="field">
+    <%= form.label :cep %>
+    <%= form.text_field :cep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uf %>
+    <%= form.text_field :uf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complement %>
+    <%= form.text_field :complement %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ibge_code %>
+    <%= form.text_field :ibge_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  
+<% end %>
